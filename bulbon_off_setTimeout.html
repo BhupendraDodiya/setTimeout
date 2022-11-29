@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    button:hover
+    {
+      background-color: green;
+    }
+    button.stop:hover
+    {
+      background-color: red;
+    }
+    button.stop1:hover
+    {
+      background-color: yellow;
+    }
+  </style>
+  <script >
+    let ab,bc,cd,de;
+    let p,q,r,s;
+    function start()
+    {
+        clearTimeout(p);
+        clearTimeout(q);
+        clearTimeout(r);
+        clearTimeout(s);
+        ab=setTimeout(function(){
+            document.getElementById('b1').src="/images/onbulb.jpg";
+        },1000);
+        bc=setTimeout(function(){
+            document.getElementById('b2').src="/images/onbulb.jpg";
+        },2000);
+        cd=setTimeout(function(){
+            document.getElementById('b3').src="/images/onbulb.jpg";
+        },3000);
+        de=setTimeout(function(){
+            document.getElementById('b4').src="/images/onbulb.jpg";
+        },4000);
+    }
+     function stop()
+    {
+        clearTimeout(ab);
+        clearTimeout(bc);
+        clearTimeout(cd);
+        clearTimeout(de);
+        p=setTimeout(function(){
+            document.getElementById('b4').src="/images/offbulb.jpg";
+        },1000);
+        q=setTimeout(function(){
+            document.getElementById('b3').src="/images/offbulb.jpg";
+        },2000);
+        r=setTimeout(function(){
+            document.getElementById('b2').src="/images/offbulb.jpg";
+        },3000);
+        s=setTimeout(function(){
+            document.getElementById('b1').src="/images/offbulb.jpg";
+        },4000);
+    }
+    function hello()
+    {
+        window.location.href="/bulbon_off_setTimeout.html";
+    }
+  </script>
+</head>
+<body>
+  <img id="b1" src="/images/offbulb.jpg" width="200px" height="200px">
+  <img id="b2" src="/images/offbulb.jpg" width="200px" height="200px">
+  <img id="b3" src="/images/offbulb.jpg" width="200px" height="200px">
+  <img id="b4" src="/images/offbulb.jpg" width="200px" height="200px"><br><br>
+  <button style="border:3px solid green;" onclick="start()"> start </button>
+  <button class="stop" style="border:3px solid red;" onclick="stop()"> stop </button>
+  <button class="stop1" style="border:3px solid yellow;" onclick="hello()"> clear </button>
+</body>
+</html>
